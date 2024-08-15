@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,50 +16,50 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-    <nav className={styles.mainnav}>
-      <ul>
-        <li>Home</li>
-        <li>Blogs</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+      <nav className={styles.mainnav}>
+        <ul>
+          <Link href='/' legacyBehavior><a><li>Home</li></a></Link>
+          <Link href='/about' legacyBehavior><a><li>About</li></a></Link>
+          <Link href='/blog' ><li>Blog</li></Link>
+          <Link href='/contact' ><li>Contact</li></Link>
+        </ul>
+      </nav>
 
       <main className={`${styles.main}`}>
         <h2>Hunting Coder</h2>
         <div className={styles.description}>
           <p>A blog for Hunting Coder by a JMT Coder</p>
         </div>
-          <div className="blogs">
-            <div className="blogItem">
-              <h2>How to learn JavaScript in 2024</h2>
-              <p>JavaScript is a language used to desigb ogic for the web</p>
-            </div>
+        <div className="blogs">
+          <div className="blogItem">
+            <h2>How to learn JavaScript in 2024</h2>
+            <p>JavaScript is a language used to desigb ogic for the web</p>
           </div>
-          <div className="blogs">
-            <div className="blogItem">
-              <h2>How to learn JavaScript in 2024</h2>
-              <p>JavaScript is a language used to desigb ogic for the web</p>
-            </div>
+        </div>
+        <div className="blogs">
+          <div className="blogItem">
+            <h2>How to learn JavaScript in 2024</h2>
+            <p>JavaScript is a language used to desigb ogic for the web</p>
           </div>
-          <div className="blogs">
-            <div className="blogItem">
-              <h2>How to learn JavaScript in 2024</h2>
-              <p>JavaScript is a language used to desigb ogic for the web</p>
-            </div>
+        </div>
+        <div className="blogs">
+          <div className="blogItem">
+            <h2>How to learn JavaScript in 2024</h2>
+            <p>JavaScript is a language used to desigb ogic for the web</p>
           </div>
-          <div className="blogs">
-            <div className="blogItem">
-              <h2>How to learn JavaScript in 2024</h2>
-              <p>JavaScript is a language used to desigb ogic for the web</p>
-            </div>
+        </div>
+        <div className="blogs">
+          <div className="blogItem">
+            <h2>How to learn JavaScript in 2024</h2>
+            <p>JavaScript is a language used to desigb ogic for the web</p>
           </div>
-          <div className="blogs">
-            <div className="blogItem">
-              <h2>How to learn JavaScript in 2024</h2>
-              <p>JavaScript is a language used to desigb ogic for the web</p>
-            </div>
+        </div>
+        <div className="blogs">
+          <div className="blogItem">
+            <h2>How to learn JavaScript in 2024</h2>
+            <p>JavaScript is a language used to desigb ogic for the web</p>
           </div>
+        </div>
 
         <div className={styles.grid}>
           <a
