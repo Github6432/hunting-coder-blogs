@@ -2,11 +2,23 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Link from 'next/link'
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  <style jsx>
+    {
+      `
+          h2{
+            font-size: 38px;
+          }
+          h3{
+            font-size: 28px;
+          }`
+    }
+  </style>
+
   return (
     <>
       <Head>
@@ -16,17 +28,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className={styles.mainnav}>
-        <ul>
-          <Link href='/' legacyBehavior><a><li>Home</li></a></Link>
-          <Link href='/about' legacyBehavior><a><li>About</li></a></Link>
-          <Link href='/blog' ><li>Blog</li></Link>
-          <Link href='/contact' ><li>Contact</li></Link>
-        </ul>
-      </nav>
-
       <main className={`${styles.main}`}>
         <h2>Hunting Coder</h2>
+        <div className={styles.imagewrap}>
+          <Image className={styles.myImg} src="/homeimg.jpg" alt="Home Image" width={237} height={158} />
+        </div>
         <div className={styles.description}>
           <p>A blog for Hunting Coder by a JMT Coder</p>
         </div>
