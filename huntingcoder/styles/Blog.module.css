@@ -8,9 +8,11 @@
     justify-content: flex-start;
       padding-top: 3rem;
   }
-.blogItem {
+  .blogItemp{
+    max-width: 45vw;
     margin-bottom: 15px;
-}
+  }
+  
 
 .blogItemh3{
     cursor: pointer;
