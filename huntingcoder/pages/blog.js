@@ -6,18 +6,18 @@ import Link from 'next/link';
 // Step 2: Iterate through them and Display them
 
 
-const Blog = () => {
-  const [blogs, setBlogs] = useState([]);
-  useEffect(() => {
-    console.log("useeffect is running");
-    fetch('http://localhost:3000/api/blogs').then((a) => {
-      return a.json();
-    })
-      .then((parsed) => {
-        console.log(parsed)
-        setBlogs(parsed)
-      })
-  }, [])
+const Blog = (props) => {
+  const [blogs, setBlogs] = useState(props.allBlogs);
+  // useEffect(() => {
+  //   console.log("useeffect is running");
+  //   fetch('http://localhost:3000/api/blogs').then((a) => {
+  //     return a.json();
+  //   })
+  //     .then((parsed) => {
+  //       console.log(parsed)
+  //       setBlogs(parsed)
+  //     })
+  // }, [])
 
   return <div className={styles.container}>
     <main className={styles.main}>
@@ -31,6 +31,15 @@ const Blog = () => {
       })}
     </main>
   </div>
+}
+
+export async function getServerSideProps(context) {
+  let data = await fetch('http://localhost:3000/api/blogs')
+  let allBlogs = await data.json()
+
+  return {
+      props: { allBlogs }, // will be passed to the page component as props
+  }
 }
 
 export default Blog;
