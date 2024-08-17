@@ -31,8 +31,8 @@ export default function Home() {
       <main className={`${styles.main}`}>
         <h2>Hunting Coder</h2>
         <div className={styles.imagewrap}>
-          {/* <Image className={styles.myImg} src="/homeimg.jfif" width={237} height={158}/> */}
-          <img className={styles.myImg} src="/homeimg.jpg" width={237} height={158} alt="hunting coder" />
+          <Image className={styles.myImg} src="/homeimg.jpg" width={237} height={158} alt="hunting coder" />
+          {/* <img className={styles.myImg} src="/homeimg.jpg" width={237} height={158} alt="hunting coder" /> */}
         </div>
         <div className={styles.description}>
           <p>A blog for Hunting Coder by a JMT Coder</p>
