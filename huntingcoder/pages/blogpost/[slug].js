@@ -9,19 +9,6 @@ import * as fs from 'fs';
 const slug = (props) => {
 
     const [blog, setBlog] = useState(props.myBlog);
-
-    // const router = useRouter();
-    // useEffect(() => {
-    //     if (!router.isReady) return;
-    //     const { slug } = router.query;
-    //     fetch(`http://localhost:3000/api/getblog?slug=${slug}`).then((a) => {
-    //         return a.json();
-    //     })
-    //         .then((parsed) => {
-    //             setBlog(parsed)
-    //         })
-    // }, [router.isReady])
-
     return <div className={styles.container}>
         <main className={styles.main}>
             <h1>{blog && blog.title}</h1>
@@ -34,12 +21,12 @@ const slug = (props) => {
 };
 
 export async function getStaticPaths() {
+    let allb = await fs.promises.readdir(`blogdata`)
+    allb = allb.map((item) => {
+        return { params: { slug: item.split(".")[0] } }
+    })
     return {
-        paths: [
-            { params: { slug: 'how-to-learn-flask' } },
-            { params: { slug: 'how-to-learn-javascript' } },
-            { params: { slug: 'how-to-learn-nextjs' } },
-        ],
+        paths: allb,
         fallback: true // false or 'blocking'
     };
 }
